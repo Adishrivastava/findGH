@@ -1,4 +1,4 @@
-import { faArrowRight, faCheck, faChevronRight, faLongArrowAltRight, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment } from 'react';
 

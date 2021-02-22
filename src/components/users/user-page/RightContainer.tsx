@@ -1,4 +1,4 @@
-import { faCheck, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useState } from 'react'
 import GithubContext from '../../../contexts/github/GithubContext';
