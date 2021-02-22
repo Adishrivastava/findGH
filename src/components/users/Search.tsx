@@ -1,3 +1,5 @@
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useState } from 'react';
 import GithubContext from '../../contexts/github/GithubContext';
 
@@ -19,21 +21,25 @@ export const Search = () => {
 	};
 
 	return (
-		<div>
+		<div className="search-container">
+
+			<h1 className="text-center">Find any github user here</h1>
+
+
 			<form onSubmit={onSubmit} className="form">
 				<div className="form-group">
 					<label htmlFor=""></label>
 					<input
 						type="text"
 						name="text"
-						className="form-control"
+						className="form-control search-input"
 						onChange={onChange}
 						value={Text}
 						aria-describedby="helpId"
 						placeholder="Search"
 					/>
-					<small id="helpId" className="form-text text-muted text-center">
-						Search for a github user
+					<small id="helpId" className="form-text pt-3 font-weight-bold text-muted text-center">
+						Search for github user here
 					</small>
 				</div>
 
@@ -41,9 +47,10 @@ export const Search = () => {
 					type="submit"
 					name="searchBtn"
 					id="searchBtn"
-					className="btn btn-primary form-control"
+					className="btn btn-primary form-control search-button"
+
 				>
-					search
+					<FontAwesomeIcon icon={faSearch} style={{ fontSize: '0.9em', marginRight: '5px' }} /> search
 				</button>
 
 				{showUsers && (
@@ -56,7 +63,9 @@ export const Search = () => {
 					</button>
 				)}
 			</form>
-		</div>
+			<br />
+			<br />
+		</div >
 	);
 };
 

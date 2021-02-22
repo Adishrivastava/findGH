@@ -3,6 +3,7 @@ import axios from 'axios';
 import GithubReducer from './GithubReducer';
 import GithubContext from './GithubContext';
 
+
 let githubClientId: any;
 let githubClientSecret: any;
 
@@ -17,6 +18,7 @@ const GithubState = (props: any) => {
 		loading: false,
 		alert: null,
 	};
+
 
 	const [state, dispatch] = useReducer(GithubReducer, initialState);
 
@@ -69,6 +71,7 @@ const GithubState = (props: any) => {
 			payload: { type: type, msg: msg },
 		});
 
+
 		setTimeout(
 			() =>
 				dispatch({
@@ -84,6 +87,8 @@ const GithubState = (props: any) => {
 
 	// Set Loading
 	const setLoading = () => dispatch({ type: 'SET_LOADING' });
+
+	console.log(state.users)
 
 	return (
 		<GithubContext.Provider
