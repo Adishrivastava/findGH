@@ -15,12 +15,12 @@ const App = () => {
 				<div className="App">
 					<Navbar />
 					<div className="container">
-						<Alert alert={alert} />
+						<Alert />
 						<Switch>
 							<Route
 								exact
 								path="/"
-								render={(props) => (
+								render={() => (
 									<Fragment>
 										<Search />
 										<Users />

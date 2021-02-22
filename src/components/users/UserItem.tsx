@@ -1,7 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const UserItem = ({ user: { login, avatar_url, html_url } }) => {
+interface userProp {
+  login?: string,
+  avatar_url?: string,
+  html_url?: string
+}
+
+interface Props {
+  user: userProp
+}
+
+const UserItem: React.FC<Props> = ({ user: { login, avatar_url, html_url } }) => {
   return (
     <div className=" text-center">
       <img className="card-img-top" src={avatar_url} alt=""></img>

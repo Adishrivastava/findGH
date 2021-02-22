@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import GithubContext from '../../contexts/github/GithubContext';
 
-const Alert = () => {
+const Alert: React.FC = () => {
 	const githubContext = useContext(GithubContext);
 	const { alert } = githubContext;
 	return (
-		alert !== null && (
+		alert !== null ? (
 			<div className={`alert alert-${alert.type}`}>
 				<i className="fa fa-info-circle"></i>
 				{alert.msg}
 			</div>
-		)
+		) : (<div></div>)
 	);
 };
 export default Alert;

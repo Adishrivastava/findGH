@@ -6,9 +6,9 @@ export const Search = () => {
 	const { searchUsers, showUsers, clearUsers, doAlert } = githubContext;
 	const [Text, setText] = useState('');
 
-	const onChange = (e) => setText(e.target.value);
+	const onChange = (e: { target: { value: React.SetStateAction<string>; }; }) => setText(e.target.value);
 
-	const onSubmit = (e) => {
+	const onSubmit = (e: { preventDefault: () => void; }) => {
 		e.preventDefault();
 		if (Text === '') {
 			doAlert('Please enter something', 'warning');

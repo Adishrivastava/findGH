@@ -1,12 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 
-const Navbar = ({ icon, title }) => {
+interface Props {
+  icon?: string,
+  title?: string
+}
+
+const Navbar: React.FC<Props> = ({ icon = "fa fa-github", title = "Github Finder" }) => {
+
   return (
     <nav className="navbar nav-light bg-primary p-2">
       <h3 className="m-0">
-        <i className={icon} style={iStyle} aria-hidden="true"></i>
+        <i
+          className={icon}
+          style={{
+            position: "relative",
+            top: "4px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+          }}
+          aria-hidden="true"></i>
         {title}
       </h3>
 
@@ -22,21 +35,5 @@ const Navbar = ({ icon, title }) => {
   );
 };
 
-Navbar.defaultProps = {
-  title: "Github Finder",
-  icon: "fa fa-github",
-};
-
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-};
-
-const iStyle = {
-  position: "relative",
-  top: "4px",
-  paddingLeft: "10px",
-  paddingRight: "10px",
-};
 
 export default Navbar;

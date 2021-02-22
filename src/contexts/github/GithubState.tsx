@@ -1,15 +1,15 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import GithubContext from './GithubContext';
 import GithubReducer from './GithubReducer';
+import GithubContext from './GithubContext';
 
-let githubClientId;
-let githubClientSecret;
+let githubClientId: any;
+let githubClientSecret: any;
 
 githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
 githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
 
-const GithubState = (props) => {
+const GithubState = (props: any) => {
 	const initialState = {
 		users: [],
 		user: {},
@@ -21,7 +21,7 @@ const GithubState = (props) => {
 	const [state, dispatch] = useReducer(GithubReducer, initialState);
 
 	// Search Users
-	const searchUsers = async (text) => {
+	const searchUsers = async (text: any) => {
 		setLoading();
 
 		const res = await axios.get(
@@ -35,7 +35,7 @@ const GithubState = (props) => {
 	};
 
 	// Get User
-	const getUser = async (username) => {
+	const getUser = async (username: any) => {
 		setLoading();
 
 		const res = await axios.get(
@@ -49,7 +49,7 @@ const GithubState = (props) => {
 	};
 
 	// Get Repos
-	const getUserRepos = async (username) => {
+	const getUserRepos = async (username: any) => {
 		setLoading();
 
 		const res = await axios.get(
@@ -63,7 +63,7 @@ const GithubState = (props) => {
 	};
 
 	//set alerts for search
-	const doAlert = (msg, type) => {
+	const doAlert = (msg: any, type: any) => {
 		dispatch({
 			type: 'SET_ALERT',
 			payload: { type: type, msg: msg },

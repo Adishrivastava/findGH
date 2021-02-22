@@ -1,4 +1,4 @@
-export default (state, action) => {
+ const GithubReducer = (state: any, action: { type?: any; payload?: any; }) => {
 	switch (action.type) {
 		case 'SEARCH_USERS':
 			return {
@@ -39,3 +39,5 @@ export default (state, action) => {
 			return state;
 	}
 };
+
+export default GithubReducer

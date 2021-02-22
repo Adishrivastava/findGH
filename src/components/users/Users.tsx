@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import GithubContext from '../../contexts/github/GithubContext';
 
-export const Users = () => {
+export const Users: React.FC = () => {
 	const githubContext = useContext(GithubContext);
 	const { users, loading } = githubContext;
 	if (loading) {
@@ -13,7 +13,7 @@ export const Users = () => {
 	} else {
 		return (
 			<div className="users-list">
-				{users.map((user) => (
+				{users.map((user: any) => (
 					<UserItem key={user.id} user={user} />
 				))}
 			</div>
