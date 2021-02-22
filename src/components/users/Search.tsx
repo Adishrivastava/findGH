@@ -25,7 +25,6 @@ export const Search = () => {
 
 			<h1 className="text-center">Find any github user here</h1>
 
-
 			<form onSubmit={onSubmit} className="form">
 				<div className="form-group">
 					<label htmlFor=""></label>
@@ -36,10 +35,10 @@ export const Search = () => {
 						onChange={onChange}
 						value={Text}
 						aria-describedby="helpId"
-						placeholder="Search"
+						placeholder=" > Search for any github user by their name"
 					/>
 					<small id="helpId" className="form-text pt-3 font-weight-bold text-muted text-center">
-						Search for github user here
+						Search for any github user here
 					</small>
 				</div>
 

@@ -7,6 +7,7 @@ import About from './components/pages/About';
 import './App.css';
 import GithubState from './contexts/github/GithubState';
 import Alert from './components/layout/Alert';
+import UserPage from './components/pages/UserPage';
 
 const App = () => {
 	return (
@@ -14,7 +15,7 @@ const App = () => {
 			<Router>
 				<div className="App">
 					<Navbar />
-					<div className="container">
+					<div className="container-fluid p-5">
 						<Alert />
 						<Switch>
 							<Route
@@ -27,7 +28,7 @@ const App = () => {
 									</Fragment>
 								)}
 							/>
-
+							<Route path="/user/:login" component={UserPage} />
 							<Route exact path="/about" component={About} />
 						</Switch>
 					</div>

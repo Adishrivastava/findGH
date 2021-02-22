@@ -1,13 +1,10 @@
 import React, { Fragment } from 'react';
-import spinner from './spinner.gif';
-
+import Loader from "react-loader-spinner";
 const Spinner = () => (
 	<Fragment>
-		<img
-			src={spinner}
-			alt="Loading"
-			style={{ width: '200px', margin: 'auto', display: 'block' }}
-		/>
+		<div className="loader-container">
+			<Loader type="Bars" color="#333333" height={80} width={80} />
+		</div>
 	</Fragment>
 );
 

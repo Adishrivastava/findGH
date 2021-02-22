@@ -1,6 +1,7 @@
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 interface userProp {
   login?: string,
@@ -13,11 +14,14 @@ interface Props {
 }
 
 const UserItem: React.FC<Props> = ({ user: { login, avatar_url, html_url } }) => {
+
+  const history = useHistory();
+
   return (
-    <div className="text-center cards">
+    <div className="text-center cards" onClick={() => history.push(`user/${login}`)}>
       <img className="card-img-top" src={avatar_url} alt=""></img>
-      <div className="card-body">
-        <h4 className="card-title">{login}</h4>
+      <div className="card-body" onClick={() => { }}>
+        <h4 className="card-title" style={{ fontWeight: 'bold' }}>{login}</h4>
         <a target="_blank" rel="noreferrer" href={html_url} className="more-btn">
           {'Learn more '}<FontAwesomeIcon icon={faAngleDoubleRight} />
         </a>

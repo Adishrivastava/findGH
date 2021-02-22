@@ -1,18 +1,20 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 interface Props {
   icon?: any,
   title?: string
 }
 
-const Navbar: React.FC<Props> = ({ icon = faGithub, title = "Github Finder" }) => {
+const Navbar: React.FC<Props> = ({ icon = faGithub, title = "FindInGH" }) => {
+
+  const history = useHistory();
 
   return (
     <nav className="navbar navbar-main navbar-fixed-top nav-dark">
-      <h3 className="m-0">
+      <h3 className="m-0" onClick={() => history.push('/')}>
         <FontAwesomeIcon icon={icon} className="mr-2" />
         {title}
       </h3>
