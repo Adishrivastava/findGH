@@ -122,6 +122,7 @@ input:active, input:focus, input:hover {
 
 .cards {
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .cards img {
