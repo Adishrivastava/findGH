@@ -1,6 +1,7 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEllipsisV, faUserMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 interface Props {
@@ -8,9 +9,46 @@ interface Props {
   title?: string
 }
 
+export const ListMenu: React.FC = () => {
+
+  console.log('listed')
+
+  return (<ul className="nav">
+    <li className="list-element ml-3">
+      <Link to="/">Home</Link>
+    </li>
+    <li className="list-element ml-3 mr-3">
+      <Link to="/About">About</Link>
+    </li>
+  </ul>)
+}
+
+export const IconMenu: React.FC = () => (<Fragment>
+  <FontAwesomeIcon icon={faEllipsisV} />
+</Fragment>)
+
 const Navbar: React.FC<Props> = ({ icon = faGithub, title = "FindInGH" }) => {
 
   const history = useHistory();
+
+  const [width, setWidth] = useState<number>(0);
+  // console.log(width)
+
+  function getWindowDimensions() {
+    const { innerWidth: width } = window;
+    return width
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [setWidth]);
+
+
 
   return (
     <nav className="navbar navbar-main navbar-fixed-top nav-dark">
@@ -19,17 +57,13 @@ const Navbar: React.FC<Props> = ({ icon = faGithub, title = "FindInGH" }) => {
         {title}
       </h3>
 
-      <ul className="nav">
-        <li className="list-element ml-3">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="list-element ml-3 mr-3">
-          <Link to="/About">About</Link>
-        </li>
-      </ul>
+      {width > 990 && (<ListMenu />)}
+
     </nav >
   );
 };
+
+
 
 
 export default Navbar;

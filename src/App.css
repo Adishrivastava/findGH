@@ -248,6 +248,10 @@ input:active, input:focus, input:hover {
   font-weight: 600;
 }
 
+.user-page-div {
+  padding-top: 100px;
+}
+
 .user-page-div .user-main-container {
   background-color: rgba(8, 8, 8, 0.361);
   height: 80vh;

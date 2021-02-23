@@ -29,7 +29,7 @@ const UserPage: React.FC<Props> = () => {
 
 
    return (
-      <div className="container-fluid user-page-div" style={{ paddingTop: '100px' }}>
+      <div className="container-fluid user-page-div">
          <div className="container-fluid user-main-container">
             <div className="row ">
 

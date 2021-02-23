@@ -15,7 +15,7 @@ const App = () => {
 			<Router>
 				<div className="App">
 					<Navbar />
-					<div className="container-fluid p-5">
+					<div className="container-fluid">
 						<Alert />
 						<Switch>
 							<Route
