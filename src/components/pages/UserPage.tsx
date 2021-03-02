@@ -16,13 +16,14 @@ const UserPage: React.FC<Props> = () => {
    const { user, getUser, getUserRepos } = useContext(GithubContext);
    const { login } = useParams<propParam>();
 
-   const handleNonUser = () => {
-      getUser(login)
-      getUserRepos(login)
+   const handleNonUser = async () => {
+      await getUser(login)
+      await getUserRepos(login)
    }
 
    useEffect(() => {
       if (Object.keys(user).length === 0 || user.login !== login) {
+         console.log("no one 🚀🚀🚀🚀🚀")
          handleNonUser()
       }
    }, [user])

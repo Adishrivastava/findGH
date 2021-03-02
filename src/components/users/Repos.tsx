@@ -12,10 +12,10 @@ const Repos: React.FC<Props> = ({ searchText }) => {
 
    const [searchedRepos, setSearchRepos] = useState(repos)
 
-   // if repo is empty
-   const handleNoRepos = async () => {
-      await getUserRepos('ujjwalnahar');
-   }
+   // // if repo is empty
+   // const handleNoRepos = async () => {
+   //    await getUserRepos('ujjwalnahar');
+   // }
 
    // seaarching by full_name and language
    const handleSearch = () => {
@@ -26,13 +26,13 @@ const Repos: React.FC<Props> = ({ searchText }) => {
 
    useEffect(() => {
       if (repos.length === 0) {
-         handleNoRepos();
+         // handleNoRepos();
       }
       console.log(repos)
       setSearchRepos([...repos])
 
 
-      if (repos.length > 0 && searchText) {
+      if (repos.length === 0 && searchText) {
          handleSearch();
       }
 

@@ -13,6 +13,8 @@ const RightContainer: React.FC<Props> = () => {
    const { user, repos } = useContext(GithubContext);
    const { following, followers, hireable } = user;
 
+   console.log(repos, user)
+
    const [repoSearch, setRepoSearch] = useState<string>('')
 
    return (
